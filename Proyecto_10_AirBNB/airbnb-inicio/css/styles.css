@@ -1,0 +1,335 @@
+:root {
+    --fuete-principal: "Lato", sans-serif;
+    --primario: #da595e;
+    --oscuro: #484848;
+    --claro: #fff;
+
+    --hospedaje: #274154;
+    --concierto: #da595b;
+    --clase: #598dda;
+    --paseo: #940ad4;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: var(--fuete-principal);
+}
+
+h1 {
+    font-size: 2.6rem;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+/* Colores */
+.hospedaje {
+    color: var(--hospedaje);
+}
+
+.concierto {
+    color: var(--concierto);
+}
+
+.clase {
+    color: var(--clase);
+}
+
+.paseo {
+    color: var(--paseo);
+}
+
+/* Interfaz */
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero {
+    height: 100vh;
+    background-image: url(../img/arriba.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-self: flex-start;
+    align-items: center;
+    width: 100%;
+    padding-top: 1rem;
+}
+
+.navegacion a {
+    color: var(--claro);
+    text-decoration: none;
+    margin-right: 1rem;
+    text-transform: uppercase;
+}
+
+.navegacion a:last-of-type {
+    margin-right: 0;
+}
+
+.contenido-hero {
+    display: grid;
+    grid-template-columns: 5% auto 5%;
+    grid-template-rows: max-content auto;
+}
+
+.contenido-hero h1 {
+    color: var(--claro);
+    grid-column: 2 / 3;
+}
+
+.contenido-hero form {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    position: relative;
+    display: flex;
+    height: 4rem;
+}
+
+form input[type="text"] {
+    flex: 1;
+    border: none;
+    border-radius: 10px;
+    background-image: url(../img/lupa.png);
+    background-repeat: no-repeat;
+    background-position: calc(1% + 1rem) calc(1% + 0.8rem);
+    padding-left: 5rem;
+    font-size: 1.6rem;
+}
+
+form input[type="submit"] {
+    position: absolute;
+    right: 1rem;
+    top: 0.6rem;
+    padding: 0.7rem 2rem;
+    border: none;
+    background-color: var(--primario);
+    color: var(--claro);
+    text-transform: uppercase;
+    border-radius: 10px;
+    font-size: 1.2rem;
+}
+
+form input[type="submit"]:hover {
+    cursor: pointer;
+}
+
+.boton {
+    background-color: var(--claro);
+    display: block;
+    padding: 1rem;
+    color: var(--oscuro);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-align: center;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 13px 19px -10px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0px 13px 19px -10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 13px 19px -10px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease-in-out;
+}
+
+.boton:hover {
+    background-color: var(--primario);
+    color: var(--claro);
+}
+
+.btn-flotante {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: var(--claro);
+    padding: 0.5rem 2rem;
+    text-decoration: none;
+    color: var(--oscuro);
+    -webkit-box-shadow: 0px 13px 19px -10px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0px 13px 19px -10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 13px 19px -10px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-flotante.activo,
+.btn-flotante:hover {
+    background-color: var(--primario);
+    color: var(--claro);
+}
+
+/* Contenido Principal */
+.contenedor-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 1rem;
+}
+
+.card img {
+    width: 100%;
+}
+
+.info .categoria {
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.info .titulo {
+    font-size: 1.6rem;
+    font-weight: 900;
+    margin: 0;
+}
+
+.info .precio {
+    color: var(--oscuro);
+    font-size: 0.9rem;
+}
+
+/* Premium */
+.premium {
+    background-image: url(../img//hospedaje-pro.jpg);
+    background-repeat: no-repeat;
+    grid-template-columns: unset;
+    height: 30rem;
+}
+
+@media (min-width: 768px) {
+    .premium {
+        grid-template-columns: auto 30%;
+    }
+
+    .premium .info {
+        grid-column: 2 / 3;
+    }
+}
+
+.premium .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.premium .info h3 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: (var(--claro));
+}
+
+@media (min-width: 768px) {
+    .premium .info h3 {
+        text-align: right;
+        color: var(--oscuro);
+    }
+}
+
+/* Destinos Populares */
+.destinos .contenedor-cards {
+    grid-template-columns: repeat(auto-fit minmax(200px, 1fr));
+}
+
+.destinos .card {
+    position: relative;
+}
+
+.destinos .info {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+}
+
+.destinos .info .titulo {
+    font-size: 1.8rem;
+    color: var(--claro);
+}
+
+/* Footer */
+.footer {
+    position: fixed;
+    bottom: -100%;
+    background-color: var(--claro);
+    width: 100%;
+    -webkit-box-shadow: 0px -13px 24px -10px rgba(0, 0, 0, 0.32);
+    -moz-box-shadow: 0px -13px 24px -10px rgba(0, 0, 0, 0.32);
+    box-shadow: 0px -13px 24px -10px rgba(0, 0, 0, 0.32);
+    transition: all 0.3s ease-in;
+    padding: 4rem 0;
+}
+
+.footer.activo {
+    bottom: 0;
+}
+
+.nav-footer {
+    padding: 1rem;
+}
+
+.nav-footer h3 {
+    font-size: 1.2rem;
+}
+
+.nav-footer a {
+    display: block;
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+    color: var(--oscuro);
+}
+
+.nav-footer a:last-of-type {
+    margin-bottom: 0;
+}
+
+/* Sociales */
+.sociales ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    padding: 0;
+}
+
+.sociales ul li {
+    margin-right: 1rem;
+}
+
+.sociales ul li span {
+    display: none;
+}
+
+.sociales ul li a {
+    font-family: "Font Awesome 5 Brands";
+    color: var(--oscuro);
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.sociales ul li a[href*="facebook.com"]::before {
+    content: "\f09a";
+}
+
+.sociales ul li a[href*="twitter.com"]::before {
+    content: "\f099";
+}
+
+.sociales ul li a[href*="instagram.com"]::before {
+    content: "\f16d";
+}
